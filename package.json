@@ -1,0 +1,39 @@
+{
+  "name": "comp-manager",
+  "version": "1.0.0",
+  "description": "Beer competition manager",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn build",
+    "heroku-postbuild": "npm run build",
+    "test": "NODE_ENV=test && npm run test:test",
+    "test:test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dardin-dale/comp-manager.git"
+  },
+  "author": "Logan Crecraft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dardin-dale/comp-manager/issues"
+  },
+  "homepage": "https://github.com/Dardin-dale/comp-manager#readme",
+  "dependencies": {
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4"
+  }
+}
