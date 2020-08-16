@@ -1,9 +1,0 @@
-/* 
-    Form to easily add a new competition after a user has signed in.
-
-    Should be an Esoteric Comp or BJCP
-
-    Maybe cu
-
-    Should route directly to ManageComp page on completion.
-*/
